@@ -21,10 +21,10 @@ with open(file_path, 'r', encoding='utf-8') as f:
         cand['score'] = calculate_score(cand)
         candidates.append(cand)
 
-# Score ke hisab se sort karein
+# sort according to score
 candidates.sort(key=lambda x: x['score'], reverse=True)
 
-# 100 rows ki CSV file generate karein
+# genrrate CSVfile with 100 rows
 with open('final_rankings.csv', mode='w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(['candidate_id', 'rank', 'score', 'reasoning']) # Requirement ke columns
